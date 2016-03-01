@@ -5,7 +5,7 @@ node {
     echo "Hello, world"
     stage "Build"
     echo "Building branch ${env.BRANCH_NAME}"
-    def branch = "${env.BRANCH_NAME}"
+    def branch = env.BRANCH_NAME
     if (branch == "develop") {
         stage "Deploy"
         echo "Deploying to Dev"
