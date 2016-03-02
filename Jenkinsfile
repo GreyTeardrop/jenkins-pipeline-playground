@@ -11,14 +11,26 @@ node {
 
     if (branch == 'develop') {
         stage 'Deploy'
-        echo 'Deploying to Dev'
+        deployToDev()
     }
     else if (branch ==~ /release\/.*/) {
         stage 'Deploy'
-        echo 'Deploying to QA'
+        deployToQa()
     }
     else if (branch == 'master') {
         stage 'Deploy'
-        echo 'Deploying to Prod'
+        deployToProd()
     }
+}
+
+def deployToDev() {
+    echo 'Deploying to Dev'
+}
+
+def deployToQa() {
+    echo 'Deploying to QA'
+}
+
+def deployToProd() {
+    echo 'Deploying to QA'
 }
